@@ -36,6 +36,9 @@ nav {
         &:visited {
           color: var(--font-color);
         }
+        &:link {
+          color: var(--font-color);
+        }
       }
     }
   }
