@@ -1,0 +1,29 @@
+.quiz-container {
+  margin-top: 50px;
+
+  .info-container {
+    display: flex;
+    border-radius: 7px;
+    box-shadow: var(--box-shadow);
+
+    img {
+      width: 300px;
+    }
+
+    div {
+      margin-left: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      justify-content: center;
+
+      h2 {
+        font-weight: 500;
+      }
+
+      span {
+        font-weight: 300;
+      }
+    }
+  }
+}
