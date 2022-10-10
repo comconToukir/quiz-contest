@@ -1,3 +1,9 @@
+:root {
+  --font-color: #001722;
+  --teal-accent: #05efdf2f;
+  --orange-accent: #f66800;
+}
+
 *,
 ::before,
 ::after {
@@ -7,12 +13,13 @@
 }
 
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
+  color: var(--font-color);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }

@@ -1,0 +1,17 @@
+.home-page {
+  margin-top: 50px;
+  margin-bottom: 100px;
+
+  header {
+    background: blanchedalmond;
+    height: 250px;
+    border-radius: 5px;
+  }
+
+  .quiz-categories {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    margin-top: 70px;
+  }
+}

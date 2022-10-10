@@ -16,6 +16,7 @@ function App() {
       >
         <Route
           path='/'
+          loader={() => fetch('https://openapi.programming-hero.com/api/quiz')}
           element={<Home />}
         />
         <Route
@@ -31,7 +32,7 @@ function App() {
   )
 
   return (
-    <div>
+    <div className='container'>
       <RouterProvider router={router} />
     </div>
   );
