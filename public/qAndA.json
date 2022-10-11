@@ -2,7 +2,7 @@
   {
     "id": "1",
     "question": "What is the purpose of React Router",
-    "answer": "React Router allows us to build a single-page web application with navigation without the page refreshing as the user navigates. React router also allows the user to utilize browser functionality like the back button and the refresh page while maintaining the correct view of the application. There are three main jobs of React Router. <ol><li>Subscribing and manipulating the history stack</li><li>Matching the URL to routes</li><li>Rendering a nested UI from the route matches</li></ol> "
+    "answer": "React Router allows us to build a single-page web application with navigation without the page refreshing as the user navigates. React router also allows the user to utilize browser functionality like the back button and the refresh page while maintaining the correct view of the application. There are three main jobs of React Router. <ol><li>Subscribing and manipulating the history stack</li><li>Matching the URL to routes</li><li>Rendering a nested UI from the route matches</li></ol>"
   },
   {
     "id": "2",

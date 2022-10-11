@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 
 import { EyeIcon, EyeSlashIcon } from "@heroicons/react/24/solid";
 import { ToastContainer, toast } from 'react-toastify';
@@ -6,10 +6,12 @@ import { ToastContainer, toast } from 'react-toastify';
 
 import "./Question.scss";
 import 'react-toastify/dist/ReactToastify.css';
+import { StatsContext } from "../../contexts/StatsContext";
 
 const Question = ({
   question: { id, options, question, correctAnswer },
   idx,
+  name,
   total,
 }) => {
   const [optionSelected, setOptionSelected] = useState({
@@ -19,6 +21,8 @@ const Question = ({
   });
 
   const [showAnswer, setShowAnswer] = useState(false);
+
+  const { addToQuizStat } = useContext(StatsContext);
 
   useEffect(() => {
     const questionHeader = document.getElementById(`question-${id}`);
@@ -57,6 +61,8 @@ const Question = ({
         selectedCorrect: true,
       });
 
+      addToQuizStat(name, 'correct');
+
       toast.success('Your Answer Was Correct!!!', {
         position: "top-center",
         autoClose: 3000,
@@ -75,6 +81,8 @@ const Question = ({
         alreadySelected: true,
         selectedWrong: true,
       });
+
+      addToQuizStat(name, 'incorrect');
 
       toast.error('Your Answer Was Incorrect!!!', {
         position: "top-center",
