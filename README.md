@@ -19,4 +19,4 @@ Some other modules used to create this project are:
 * react-toastify
 
 
-### A live site of project can be found [Here](https://quiz-contest-assignment.netlify.app/)
+### A live site of the project can be found [Here](https://quiz-contest-assignment.netlify.app/)
