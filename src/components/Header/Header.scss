@@ -9,6 +9,10 @@ nav {
   div {
     display: flex;
     align-items: center;
+
+    .nav-logo {
+      cursor: pointer;
+    }
     
     img {
       height: 50px;
