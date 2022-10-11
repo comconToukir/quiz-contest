@@ -1,9 +1,39 @@
+@import '../../mixins';
+
 .stats-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
   margin-top: 50px;
 
-  h2 {
-    margin-bottom: 45px;
+  @include for-phone-only { 
+    grid-template-columns: 1fr;
+  }
+
+  @include for-tablet-portrait-up {
+    grid-template-columns: 1fr;
+  }
+
+  @include for-tablet-landscape-up {
+    width: 80%;
+    margin: 50px auto;
+  }
+
+  @include for-desktop-up {
+    width: 100%;  
+    grid-template-columns: 1fr 1fr;
+    margin: 50px auto;
+  }
+
+  div {
+    background:  var(--light-back);
+    border-radius: 7px;
+    padding-bottom: 15px;
+    
+    h2 {
+      margin: 15px 25px;
+      padding: 15px;
+      font-weight: 600;
+    }
   }
 }

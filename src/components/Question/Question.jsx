@@ -66,7 +66,7 @@ const Question = ({
       toast.success('Your Answer Was Correct!!!', {
         position: "top-center",
         autoClose: 3000,
-        hideProgressBar: false,
+        hideProgressBar: true,
         closeOnClick: true,
         pauseOnHover: true,
         draggable: true,

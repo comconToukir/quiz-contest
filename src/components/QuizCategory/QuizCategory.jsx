@@ -8,7 +8,7 @@ const QuizCategory = ({ category: { id, name, logo, total } }) => {
   const handleClick = () => navigate(`/quiz/${id}`);
   return (
     <div className='category'>
-      <img src={logo} alt={`quiz category ${name}`} />
+      <img className='category-image' src={logo} alt={`quiz category ${name}`} />
       <div className='category-info'>
         <span className='name'>{name}</span>
         <span className='total'>Q{total}</span>

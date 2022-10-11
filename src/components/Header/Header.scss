@@ -1,6 +1,9 @@
+@import '../../mixins';
+
 nav {
   padding: 15px 0;
   font-family: "Roboto Condensed", sans-serif;
+  background-color:  var(--light-back);
   box-shadow: var(--box-shadow);
   
   div {
@@ -9,6 +12,10 @@ nav {
     
     img {
       height: 50px;
+
+      @include for-phone-only {
+        height: 35px;
+      }
     }
 
     span {
@@ -16,6 +23,10 @@ nav {
       font-weight: 700;
       letter-spacing: 1.5px;
       font-size: 25px;
+
+      @include for-phone-only {
+        font-size: 18px;
+      }
     }
 
     .nav-links {
@@ -38,6 +49,10 @@ nav {
         }
         &:link {
           color: var(--font-color);
+        }
+
+        @include for-phone-only {
+          font-size: 15px;
         }
       }
     }

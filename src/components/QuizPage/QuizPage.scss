@@ -1,3 +1,5 @@
+@import "../../mixins";
+
 .quiz-container {
   margin-top: 25px;
   overflow: hidden;
@@ -6,16 +8,57 @@
   grid-template-columns: 300px 1fr;
   gap: 25px;
 
+  @include for-phone-only {
+    grid-template-columns: 1fr;
+  }
+
+  @include for-tablet-portrait-up {
+    grid-template-columns: 1fr;
+  }
+
+  @include for-desktop-up {
+    grid-template-columns: 300px 1fr;
+  }
+
+  // @include for-tablet-landscape-up {
+  //   grid-template-columns: 1fr;
+  // }
+
   .info-container {
     border-radius: 7px;
     box-shadow: var(--box-shadow);
     display: flex;
     flex-grow: grow;
     flex-direction: column;
+    background: var(--light-back);
+
+    @include for-tablet-portrait-up {
+      flex-direction: row;
+    }
+
+    @include for-desktop-up {
+      flex-direction: column;
+    }
 
     img {
       width: 300px;
       padding: 10px;
+
+      @include for-phone-only {
+        display: none;
+      }
+
+      @include for-tablet-portrait-up {
+        width: 150px;
+        height: 150px;
+        margin: auto;
+      }
+
+      @include for-tablet-landscape-up {
+        width: 230px;
+        height: 230px;
+        margin: auto;
+      }
     }
 
     .quiz-stats {
@@ -25,7 +68,19 @@
       flex-direction: column;
       gap: 20px;
       flex: 1;
-      justify-content: center;
+      // justify-content: center;
+
+      @include for-phone-only {
+        gap: 5px;
+      }
+
+      @include for-tablet-portrait-up {
+        gap: 10px;
+      }
+
+      @include for-desktop-up {
+        gap: 20px;
+      }
 
       h2 {
         font-weight: 600;
@@ -37,12 +92,11 @@
       }
 
       .scroll-notice {
-        margin-top: auto;
+        margin: auto auto 20px auto;
         width: 80%;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        margin-bottom: 20px;
 
         svg {
           width: 20px;
@@ -50,6 +104,18 @@
 
         span {
           font-size: 12px;
+        }
+
+        @include for-phone-only {
+          margin-top: 15px;
+        }
+
+        @include for-tablet-portrait-up {
+          margin-top: 15px;
+        }
+
+        @include for-desktop-up {
+          margin-top: auto;
         }
       }
     }
@@ -61,5 +127,19 @@
     overflow: scroll;
     overflow-x: hidden;
     margin-right: -17px;
+    background: var(--light-back);
+    scroll-behavior: smooth;
+
+    @include for-phone-only {
+      height: var(--quiz-height-phone);
+    }
+
+    @include for-tablet-portrait-up {
+      height: var(--quiz-height-phone);
+    }
+
+    @include for-desktop-up {
+      height: var(--quiz-height);
+    }
   }
 }
