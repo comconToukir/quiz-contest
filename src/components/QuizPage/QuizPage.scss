@@ -9,24 +9,48 @@
   .info-container {
     border-radius: 7px;
     box-shadow: var(--box-shadow);
+    display: flex;
+    flex-grow: grow;
+    flex-direction: column;
 
     img {
       width: 300px;
+      padding: 10px;
     }
 
-    div {
+    .quiz-stats {
+      margin-top: 25px;
       margin-left: 40px;
       display: flex;
       flex-direction: column;
       gap: 20px;
+      flex: 1;
       justify-content: center;
 
       h2 {
-        font-weight: 500;
+        font-weight: 600;
       }
 
       span {
-        font-weight: 300;
+        font-size: 14px;
+        font-weight: 400;
+      }
+
+      .scroll-notice {
+        margin-top: auto;
+        width: 80%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 20px;
+
+        svg {
+          width: 20px;
+        }
+
+        span {
+          font-size: 12px;
+        }
       }
     }
   }

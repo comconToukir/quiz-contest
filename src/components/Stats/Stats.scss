@@ -1,0 +1,9 @@
+.stats-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: 50px;
+
+  h2 {
+    margin-bottom: 45px;
+  }
+}
