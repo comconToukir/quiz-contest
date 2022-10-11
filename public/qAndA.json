@@ -1,0 +1,17 @@
+[
+  {
+    "id": "1",
+    "question": "What is the purpose of React Router",
+    "answer": "React Router allows us to build a single-page web application with navigation without the page refreshing as the user navigates. React router also allows the user to utilize browser functionality like the back button and the refresh page while maintaining the correct view of the application. There are three main jobs of React Router. <ol><li>Subscribing and manipulating the history stack</li><li>Matching the URL to routes</li><li>Rendering a nested UI from the route matches</li></ol> "
+  },
+  {
+    "id": "2",
+    "question": "How does the context api work",
+    "answer": "Context provides a way to share values like these between components without having to explicitly pass a prop through every level of the tree. Context is designed to share data that can be considered “global” for a tree of React components, such as the current authenticated user, theme, or preferred language. Context is also touted as an easier, lighter approach to state management using Redux. React.createContext creates a Context object. It returns a consumer and a provider. Provider is a component that as it's names suggests provides the state to its children. It will hold the store and be the parent of all the components that might need that store. Consumer as it so happens is a component that consumes and uses the state. When React renders a component that subscribes to this Context object it will read the current context value from the closest matching Provider above it in the tree."
+  },
+  {
+    "id": "3",
+    "question": "About useRef hook",
+    "answer": "useRef is a React Hook that lets you reference a value that’s not needed for rendering. useRef returns a ref object with a single current property initially set to the initial value you provided. On the next renders, useRef will return the same object. You can change its current property to store information and read it later. Changing a ref does not trigger a re-render. This means refs are perfect for storing information that doesn’t affect the visual output of your component. By using a ref, you ensure that: <ol><li>You can store information between re-renders (unlike regular variables, which reset on every render).</li><li>Changing it does not trigger a re-render (unlike state variables, which trigger a re-render).</li><li>The information is local to each copy of your component (unlike the variables outside, which are shared).</li></ol>"
+  }
+]

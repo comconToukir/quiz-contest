@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
 
 import { EyeIcon, EyeSlashIcon } from "@heroicons/react/24/solid";
+import { ToastContainer, toast } from 'react-toastify';
+
 
 import "./Question.scss";
+import 'react-toastify/dist/ReactToastify.css';
 
 const Question = ({
   question: { id, options, question, correctAnswer },
@@ -37,45 +40,70 @@ const Question = ({
   }, [optionSelected, id, correctAnswer]);
 
   const handleChooseAnswer = (event) => {
+    if (optionSelected.alreadySelected === true) {
+      return;
+    }
+
     const selectedOption = event.target.innerText;
 
     if (
       selectedOption.replace(/\s/g, "") === correctAnswer.replace(/\s/g, "")
     ) {
       event.target.classList.add("correct");
+
       setOptionSelected({
         ...optionSelected,
         alreadySelected: true,
         selectedCorrect: true,
       });
+
+      toast.success('Your Answer Was Correct!!!', {
+        position: "top-center",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        });
     } else {
       event.target.classList.add("wrong");
+
       setOptionSelected({
         ...optionSelected,
         alreadySelected: true,
         selectedWrong: true,
       });
+
+      toast.error('Your Answer Was Incorrect!!!', {
+        position: "top-center",
+        autoClose: 3000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        });
     }
   };
 
   const handleToggleAnswer = () => {
-    setShowAnswer(!showAnswer);
-    console.log(showAnswer)
-    if (showAnswer) {
-      setOptionSelected({
-        ...optionSelected,
-        selectedWrong: true,
-      });
-    }
+    setOptionSelected({
+      ...optionSelected,
+      selectedWrong: true,
+    });
   };
 
   return (
     <div className="question-div">
+        <ToastContainer />
       <div className="details">
         <div className="question-container">
           <h2 id={`question-${id}`}> </h2>
-          <span className="eye-icon">
-            {setShowAnswer ? <EyeSlashIcon  onClick={handleToggleAnswer}/> : <EyeIcon onClick={handleToggleAnswer} /> }
+          <span className="eye-icon" onClick={handleToggleAnswer}>
+            {showAnswer ? <EyeSlashIcon /> : <EyeIcon />}
           </span>
         </div>
         <span className="question-index">

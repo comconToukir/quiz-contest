@@ -1,7 +1,7 @@
 .question-div {
   text-align: center;
   padding: 25px;
-  height: calc(100vh - 105px);
+  height: var(--quiz-height);
   scroll-snap-align: start;
   position: relative;
   display: flex;
@@ -28,6 +28,7 @@
         position: absolute;
         top: -50px;
         right: 5px;
+        cursor: pointer;
       }
     }
 
@@ -38,12 +39,12 @@
     }
 
     .options-container {
+      width: 100%;
       margin: 0 auto;
       margin-top: 25px;
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 7px;
-      padding-bottom: 150px;
 
       span {
         width: 100%;
