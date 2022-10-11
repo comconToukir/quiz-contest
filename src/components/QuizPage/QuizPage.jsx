@@ -6,7 +6,9 @@ import "./QuizPage.scss";
 const QuizPage = () => {
   const quizData = useLoaderData().data;
   const { total, name, logo, questions } = quizData;
-  console.log(name);
+  
+  
+  
   return (
     <div className="container">
       <div className="quiz-container">
@@ -18,8 +20,13 @@ const QuizPage = () => {
           </div>
         </div>
         <div className="questions-container">
-          {questions.map((question) => (
-            <Question key={questions.id} question={question} />
+          {questions.map((question, i) => (
+            <Question
+              key={question.id}
+              question={question}
+              idx={i}
+              total={total}
+            />
           ))}
         </div>
       </div>
