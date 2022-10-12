@@ -16,7 +16,10 @@ const addStatItem = (statItems, name, bool) => {
   return [...statItems, { name, [bool]: 1 }];
 };
 
-export const StatsContext = createContext(undefined);
+export const StatsContext = createContext({
+  stats: [],
+  addToQuizStat: () => {},
+});
 
 export const StatsProvider = ({ children }) => {
   const [stats, setStats] = useState([]);

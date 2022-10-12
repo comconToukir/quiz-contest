@@ -20,15 +20,19 @@ const Question = ({
     selectedWrong: false,
   });
 
+  // used to toggle correct answer viewing
   const [showAnswer, setShowAnswer] = useState(false);
 
+  // used to send write and wrong answer to stats context which is then used in stats page
   const { addToQuizStat } = useContext(StatsContext);
 
+  // needed to append dom elements
   useEffect(() => {
     const questionHeader = document.getElementById(`question-${id}`);
     questionHeader.innerHTML = question;
   }, [id, question]);
 
+  // used to show correct answer if wrong answer is selected and to toggle correct answer when show answer button is clicked 
   useEffect(() => {
     const options = document.querySelectorAll(`.option-${id}`);
     if (optionSelected.selectedWrong === true || optionSelected.selectedCorrect === true) {
@@ -52,6 +56,7 @@ const Question = ({
     }
   }, [optionSelected, id, correctAnswer]);
 
+  // maps from options and see if the dom element with option matches with the correctAnswer, then set write or wrong and already selected in the state, shows toast according to write or wrong and uses addToQuizStat to send right or wrong data to statsContext
   const handleChooseAnswer = (event) => {
     if (optionSelected.alreadySelected === true) {
       return;
