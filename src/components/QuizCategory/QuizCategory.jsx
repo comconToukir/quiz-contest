@@ -1,5 +1,6 @@
-import { ArrowRightIcon } from '@heroicons/react/24/solid'
 import { useNavigate } from 'react-router-dom';
+
+import { ArrowRightIcon } from '@heroicons/react/24/solid'
 
 import './QuizCategory.scss';
 

@@ -1,19 +1,23 @@
-@import '../../mixins';
+@import "../../mixins";
 
 nav {
   padding: 15px 0;
   font-family: "Roboto Condensed", sans-serif;
-  background-color:  var(--light-back);
+  background-color: var(--light-back);
   box-shadow: var(--box-shadow);
-  
-  div {
+  height: 80px;
+
+  .container {
     display: flex;
     align-items: center;
+    height: 100%;
 
     .nav-logo {
+      display: flex;
+      align-items: center;
       cursor: pointer;
     }
-    
+
     img {
       height: 50px;
 
@@ -38,26 +42,88 @@ nav {
       display: flex;
       gap: 20px;
       font-weight: 400;
+      transition: all .5s ease;
+      
+      @include for-phone-only {
+        width: 100%;
+        display: block;
+        position: fixed;
+        height: 100vh;
+        top: 80px;
+        padding-top: 15px;
+        background: white;
+        z-index: 999;
+        left: -100%;
+      }
+
+      &.nav-menu-open {
+        @include for-phone-only {
+          left: 0;
+        }
+      }
+
+      
+      // @include for-tablet-portrait-up {
+      //   display: block;
+      // }
+      // @include for-tablet-landscape-up {
+      //   display: none;
+      // }
 
       a {
         text-decoration: none;
         letter-spacing: 0.8px;
         padding-bottom: 5px;
 
+        @include for-phone-only {
+          width: 100%;
+          display: block;
+          padding: 15px 10px;
+          padding-left: 25px;
+          margin: 10px 0;
+        }
+
         &.active {
           border-bottom: 2px solid #fdb111;
+
+          @include for-phone-only {
+            border-bottom: none;
+            border-left: 3px solid #fdb111;
+            padding-left: 22px;
+          }
         }
+
+        
 
         &:visited {
           color: var(--font-color);
         }
+
         &:link {
           color: var(--font-color);
+        }
+
+        &:hover {
+          color: #fdb111;
         }
 
         @include for-phone-only {
           font-size: 15px;
         }
+      }
+
+    }
+
+    .hamburger-menu {
+      height: 30px;
+      cursor: pointer;
+      margin-left: auto;
+
+      @include for-phone-only {
+        display: block;
+      }
+      @include for-tablet-portrait-up {
+        display: none;
       }
     }
   }
