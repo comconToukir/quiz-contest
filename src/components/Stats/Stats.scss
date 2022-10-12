@@ -25,10 +25,11 @@
     margin: 50px auto;
   }
 
-  div {
+  .bar-chart-container {
     background:  var(--light-back);
     border-radius: 7px;
     padding-bottom: 15px;
+    box-shadow: var(--box-shadow);
     
     h2 {
       margin: 15px 25px;
