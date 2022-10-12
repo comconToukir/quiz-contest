@@ -22,7 +22,7 @@ const Stats = () => {
   return (
     <div className="container">
       <div className="stats-container">
-        <div>
+        <div className="bar-chart-container">
           <h2>Total Questions</h2>
           <ResponsiveContainer width="100%" height={400}>
             <BarChart
@@ -44,7 +44,7 @@ const Stats = () => {
           </ResponsiveContainer>
         </div>
 
-        <div>
+        <div className="bar-chart-container">
           <h2>Quiz Statistics</h2>
           <ResponsiveContainer width="100%" height={400}>
             <BarChart
