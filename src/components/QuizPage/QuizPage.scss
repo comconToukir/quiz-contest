@@ -1,7 +1,7 @@
 @import "../../mixins";
 
 .quiz-container {
-  margin-top: 25px;
+  margin-top: 10px;
   overflow: hidden;
   height: --quiz-height;
   display: grid;
@@ -10,6 +10,7 @@
 
   @include for-phone-only {
     grid-template-columns: 1fr;
+    gap: 10px;
   }
 
   @include for-tablet-portrait-up {
@@ -19,10 +20,6 @@
   @include for-desktop-up {
     grid-template-columns: 300px 1fr;
   }
-
-  // @include for-tablet-landscape-up {
-  //   grid-template-columns: 1fr;
-  // }
 
   .info-container {
     border-radius: 7px;

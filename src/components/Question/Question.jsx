@@ -3,10 +3,10 @@ import { useContext, useEffect, useState } from "react";
 import { EyeIcon, EyeSlashIcon } from "@heroicons/react/24/solid";
 import { ToastContainer, toast } from 'react-toastify';
 
+import { StatsContext } from "../../contexts/StatsContext";
 
 import "./Question.scss";
 import 'react-toastify/dist/ReactToastify.css';
-import { StatsContext } from "../../contexts/StatsContext";
 
 const Question = ({
   question: { id, options, question, correctAnswer },
@@ -30,14 +30,23 @@ const Question = ({
   }, [id, question]);
 
   useEffect(() => {
-    if (optionSelected.selectedWrong === true) {
-      const options = document.querySelectorAll(`.option-${id}`);
+    const options = document.querySelectorAll(`.option-${id}`);
+    if (optionSelected.selectedWrong === true || optionSelected.selectedCorrect === true) {
       options.forEach((option) => {
         if (
           option.innerText.replace(/\s/g, "") ===
           correctAnswer.replace(/\s/g, "")
         ) {
           option.classList.add("correct");
+        }
+      });
+    } else {
+      options.forEach((option) => {
+        if (
+          option.innerText.replace(/\s/g, "") ===
+          correctAnswer.replace(/\s/g, "")
+        ) {
+          option.classList.remove("correct");
         }
       });
     }
@@ -98,10 +107,20 @@ const Question = ({
   };
 
   const handleToggleAnswer = () => {
-    setOptionSelected({
-      ...optionSelected,
-      selectedWrong: true,
-    });
+    if (showAnswer) {
+      setShowAnswer(!showAnswer);
+      setOptionSelected({
+        ...optionSelected,
+        selectedWrong: false,
+      });
+    } else {
+      setShowAnswer(!showAnswer);
+      setOptionSelected({
+        ...optionSelected,
+        selectedWrong: true,
+      });
+    }
+    
   };
 
   return (
