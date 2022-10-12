@@ -17,7 +17,6 @@ import { StatsContext } from "./../../contexts/StatsContext";
 const Stats = () => {
   const quizData = useLoaderData().data;
   const { stats } = useContext(StatsContext);
-  console.log(stats);
 
   return (
     <div className="container">

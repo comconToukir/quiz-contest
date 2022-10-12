@@ -7,7 +7,7 @@ import './Home.scss';
 
 const Home = () => {
   const categories = useLoaderData().data;
-  console.log(categories)
+  
   return (
     <div className='container home-page'>
       <header className='header'>
