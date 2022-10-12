@@ -112,6 +112,9 @@ const Question = ({
   };
 
   const handleToggleAnswer = () => {
+    if (optionSelected.alreadySelected) {
+      return;
+    }
     if (showAnswer) {
       setShowAnswer(!showAnswer);
       setOptionSelected({
